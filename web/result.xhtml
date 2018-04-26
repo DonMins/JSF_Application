@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" href="font.css"/>
+    <title> Результат </title>
+    <c:if test="${!task.ready}">
+        <meta http-equiv="Refresh" content="5; url=index.xhtml"/>
+    </c:if>
+</h:head>
+
+<body>
+<h:form>
+    <f:view>
+        <div class="la"> </div>
+        <h:graphicImage value="pen.gif" style="width:50px;height:50px"/>
+        <h:outputText value="Ну а вот и результат!"/>
+        <h:graphicImage value="pen.gif" style="width:50px;height:50px"/>
+        <hr/>
+        <c:if test="${task.ready}">
+            <div class="sth4">
+                <h:outputText value="Итак, давай те сложим строчку:" styleClass="sth4"/>
+                <h:outputText id="str1" value="${task.str1}"/>
+                <br/>
+                <h:outputText value="cо строчкой:" styleClass="sth4"/>
+                <h:outputText id="str2" value="${task.str2}"/>
+                <br/>
+                <h:outputText value="Результат:" styleClass="sth4"/>
+                <h:outputText id="result" value="${task.result}"/>
+                <br/>
+                <h:commandButton id="button1" action="index" value="Вернуться назад"/>
+                <p/>
+                <a href="result.xml">Результат в формате XML</a>
+            </div>
+        </c:if>
+        <c:if test="${!task.ready}">
+            <h:outputLabel>Объект задания в сессии отсутствует</h:outputLabel>
+            <br/>
+            <h:outputLabel>Вы будете перенаправлены на <h:commandLink
+                    action="comeback">исходную страницу</h:commandLink> в течение 5 секунд</h:outputLabel>
+        </c:if>
+    </f:view>
+</h:form>
+</body>
+</html>

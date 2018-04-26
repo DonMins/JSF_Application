@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+   <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+   <link rel="stylesheet" type="text/css" href="font.css"/>
+   <title> Лабораторная работа №4 Здорнов М.Ю </title>
+   <div class="la"> </div>
+   <div class="stbody"> </div>
+</h:head>
+<h:body>
+   <f:view>
+         <h:graphicImage value="calc.gif" style="width:100px;height:75px"/>
+         <h:outputText value="Вы попали на современный сайт, по складыванию строк. Поздравляем Вас!!" styleClass="sth1"/>
+         <h:graphicImage value="calc.gif" style="width:100px;height:75px"/>
+         <hr/>
+         <div id="bloc">
+            <div> <a> <h:outputText value="HELP BOX"/> </a></div>
+            <p/> <div class="line"> </div> <p/>
+            <div><b><h:outputText value="Что ж, раз вы сюда пришли - так давайте проверим, как это работает!
+                  Посмотрим, как комп умеет cкладывать строки."/> </b>
+            </div>
+            <p/> <div class="line"> </div> <p/>
+            <div> <a> <h:outputText value="HELP BOX 2 "/> </a></div>
+            <p/> <div class="line"> </div> <p/>
+            <div> <b>
+                  <h:outputText value="Введите подопотные строки в первое и второе поле и нажмите Отправить.
+                  Для сброса нажмите Очистить."/>
+               </b>
+            </div>
+         </div>
+
+      <h:form>
+         <div class="lef">
+            <h:outputLabel for="str1" value=" Поле для ввода первой строки:  "/>
+            <h:inputText id="str1" class="#{component.valid ? 'string': 'emptystring'}" value="#{task.str1}">
+               <f:validator validatorId="myValidator"/>
+            </h:inputText>
+            <h:message for="str1" style="color:red"/>
+            <p/>
+            <h:outputLabel for="str2" value=" Поле для ввода второй строки:  "/>
+            <h:inputText id="str2" class="#{component.valid ? 'string': 'emptystring'}" value="#{task.str2}">
+               <f:validator validatorId="myValidator"/>
+            </h:inputText>
+            <h:message for="str2" style="color:red"/>
+            <p/>
+            <h:commandButton action="#{task.concat()}" value="Отправить"/>
+            <h:commandButton type="reset" value="Очистить"/>
+         </div>
+      </h:form>
+   </f:view>
+</h:body>
+</html>

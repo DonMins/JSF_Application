@@ -1,0 +1,91 @@
+.stbody{
+    font-family: "Comic Sans MS"; /* Семейство шрифтов */
+    font-size: 18pt; /* Размер основного шрифта в пунктах  */
+    text-align: center;
+    background-image:  url("font.jpg");
+}
+.la{
+    padding: 30px; /* Поля вокруг текста */
+    background: url("image3.jpg"); /* Цвет фона */
+}
+
+.bottom{
+    position: fixed;
+    color:green;
+    font-size: 18pt;
+    text-align: left;
+    bottom: 80px;
+}
+#bloc{
+    float: right; /* Обтекание справа */
+    font-size: 10pt; /* Размер основного шрифта в пунктах  */
+    width: 200px; /* Ширина колонки */
+    margin-right: 50px; /* Отступ справа */
+
+    padding: 5px; /* Поля вокруг текста */
+    border: 1px solid white; /* Параметры рамки */
+}
+#bloc a {
+     font-size: 20px; /* Размер текста */
+     color: yellow;
+ }
+.errormessage {
+    color: yellow;
+    font-family: monospace;
+    font-size: 75%;
+}
+
+#bloc b {
+    font-size: 15px; /* Размер текста */
+    color: white;
+}
+.line {
+    border-bottom: 1px groove white; /* Линия между ссылками */
+}
+
+.sth1{
+    color:mediumblue;
+    font-size: 18pt;
+    text-align: center;
+}
+
+.sth4{
+    color:yellow;
+    font-size: 18pt;
+    text-align: center;
+}
+.lef{
+    text-align: left;
+    margin-left: 50px;
+    font-size: 20px;
+}
+p{
+    text-align: left;
+    margin-left: 50px;
+    font-size: 15px;
+}
+
+input {
+   font-size: 15px;
+ }
+input.string {
+    background: white;
+}
+
+input.string:focus {
+    background: yellow;
+}
+
+input.emptystring {
+    background: orangered;
+}
+
+input.emptystring:focus {
+    background: white;
+}
+.music{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 24% ;
+}
